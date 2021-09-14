@@ -108,5 +108,12 @@ public class SearchesTest {
         );
     }
 
-
+    @Test
+    void testFindUserFamilyNameByImproperFraction(){
+        assertEquals(
+                List.of("Torres", "Torres"),
+                new Searches().findUserFamilyNameByImproperFraction()
+                        .collect(Collectors.toList())
+        );
+    }
 }
