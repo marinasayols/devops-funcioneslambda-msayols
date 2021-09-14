@@ -124,4 +124,13 @@ public class SearchesTest {
                 new Searches().findHighestFraction()
         );
     }
+
+    @Test
+    void testFindUserNameByAnyImproperFraction(){
+        assertEquals(
+                List.of("Oscar", "Ana", "Oscar", "Paula", "Antonio", "Paula"),
+                new Searches().findUserNameByAnyImproperFraction()
+                        .collect(Collectors.toList())
+        );
+    }
 }
