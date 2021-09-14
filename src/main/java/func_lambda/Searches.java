@@ -38,7 +38,7 @@ public class Searches {
                 .filter(user -> user.getFractions().stream()
                         .anyMatch(Fraction::isProper))
                 .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
-                .map(User::getFamilyName);
+                .map(User::familyNameInitial);
     }
 
     public Stream<String> findUserIdByAnyProperFraction() {
