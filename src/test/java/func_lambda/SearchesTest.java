@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SearchesTest {
 
     @Test
-    void testFindUserFamilyNameByUserNameDistinct(){
+    void testFindUserFamilyNameByUserNameDistinct() {
         assertEquals(
                 List.of("Torres"),
                 new Searches().findUserFamilyNameByUserNameDistinct("Paula")
@@ -19,16 +19,16 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindFractionNumeratorByUserFamilyName(){
+    void testFindFractionNumeratorByUserFamilyName() {
         assertEquals(
-                List.of(0,1,2),
+                List.of(0, 1, 2),
                 new Searches().findFractionNumeratorByUserFamilyName("Fernandez")
                         .collect(Collectors.toList())
         );
     }
 
     @Test
-    void testFindUserFamilyNameByFractionDenominator(){
+    void testFindUserFamilyNameByFractionDenominator() {
         assertEquals(
                 List.of("Blanco", "López"),
                 new Searches().findUserFamilyNameByFractionDenominator(5)
@@ -37,10 +37,19 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindUserFamilyNameInitialByAnyProperFraction(){
+    void testFindUserFamilyNameInitialByAnyProperFraction() {
         assertEquals(
                 List.of("F", "B", "L", "B"),
                 new Searches().findUserFamilyNameInitialByAnyProperFraction()
+                        .collect(Collectors.toList())
+        );
+    }
+
+    @Test
+    void testFindUserIdByAnyProperFraction() {
+        assertEquals(
+                List.of("1", "2", "3", "5"),
+                new Searches().findUserIdByAnyProperFraction()
                         .collect(Collectors.toList())
         );
     }
