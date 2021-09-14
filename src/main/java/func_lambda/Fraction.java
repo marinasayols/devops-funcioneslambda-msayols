@@ -116,6 +116,16 @@ public class Fraction {
         return this.numerator < 0 || this.denominator < 0;
     }
 
+    public static int compare(Fraction f1, Fraction f2){
+        if (f1.decimal() < f2.decimal()){
+            return -1;
+        } else if(f1.decimal() == f2.decimal()) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
