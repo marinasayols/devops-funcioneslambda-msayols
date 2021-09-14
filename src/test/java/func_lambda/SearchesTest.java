@@ -19,6 +19,15 @@ public class SearchesTest {
     }
 
     @Test
+    void testFindFractionNumeratorByUserFamilyName(){
+        assertEquals(
+                List.of(0,1,2),
+                new Searches().findFractionNumeratorByUserFamilyName("Fernandez")
+                        .collect(Collectors.toList())
+        );
+    }
+
+    @Test
     void testFindUserFamilyNameByFractionDenominator(){
         assertEquals(
                 List.of("Blanco", "López"),
