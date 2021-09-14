@@ -2,9 +2,12 @@ package func_lambda;
 
 import org.junit.jupiter.api.Test;
 
+import javax.naming.directory.SearchResult;
+import java.io.SequenceInputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.collectingAndThen;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SearchesTest {
@@ -55,7 +58,7 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindFractionMultiplicationByUserFamilyName(){
+    void testFindFractionMultiplicationByUserFamilyName() {
         assertEquals(
                 new Fraction(0, -360),
                 new Searches().findFractionMultiplicationByUserFamilyName("Blanco")
@@ -63,15 +66,15 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindFirstFractionDivisionByUserId(){
+    void testFindFirstFractionDivisionByUserId() {
         assertEquals(
-                new Fraction(-6,15),
+                new Fraction(-6, 15),
                 new Searches().findFirstFractionDivisionByUserId("3")
         );
     }
 
     @Test
-    void testFirstDecimalFractionByUserName(){
+    void testFirstDecimalFractionByUserName() {
         assertEquals(
                 (double) -10,
                 new Searches().findFirstDecimalFractionByUserName("Ana")
@@ -79,11 +82,22 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindUserIdByAllProperFraction(){
+    void testFindUserIdByAllProperFraction() {
         assertEquals(
                 List.of(),
                 new Searches().findUserIdByAllProperFraction()
                         .collect(Collectors.toList())
         );
     }
+
+    @Test
+    void testFindDecimalImproperFractionByUserName() {
+        assertEquals(
+                List.of(2.0, (double) 4 / 3), //1.33
+                new Searches().findDecimalImproperFractionByUserName("Ana")
+                        //.map(dbl -> (double)Math.round(dbl * 100d) / 100d)
+                        .collect(Collectors.toList())
+        );
+    }
+
 }
