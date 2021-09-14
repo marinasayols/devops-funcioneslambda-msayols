@@ -83,7 +83,7 @@ public class Searches {
         return new UsersDatabase().findAll()
                 .filter(user -> user.getFractions().stream()
                         .allMatch(Fraction::isProper))
-                .map(User::getName);
+                .map(User::getId);
     }
 
     public Stream<Double> findDecimalImproperFractionByUserName(String name) {
