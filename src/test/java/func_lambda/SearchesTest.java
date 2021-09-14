@@ -100,4 +100,13 @@ public class SearchesTest {
         );
     }
 
+    @Test
+    void testFindFirstProperFractionByUserId(){
+        assertEquals(
+                new Fraction(0, 1),
+                new Searches().findFirstProperFractionByUserId("1")
+        );
+    }
+
+
 }
