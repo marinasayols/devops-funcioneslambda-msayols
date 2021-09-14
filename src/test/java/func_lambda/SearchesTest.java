@@ -118,7 +118,7 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindHighestFraction(){
+    void testFindHighestFraction() {
         assertEquals(
                 new Fraction(1, 0),
                 new Searches().findHighestFraction()
@@ -126,7 +126,7 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindUserNameByAnyImproperFraction(){
+    void testFindUserNameByAnyImproperFraction() {
         assertEquals(
                 List.of("Oscar", "Ana", "Oscar", "Paula", "Antonio", "Paula"),
                 new Searches().findUserNameByAnyImproperFraction()
@@ -135,10 +135,19 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindUserFamilyNameByAllNegativeSignFractionDistinct(){
+    void testFindUserFamilyNameByAllNegativeSignFractionDistinct() {
         assertEquals(
                 List.of("Blanco", "López"),
                 new Searches().findUserFamilyNameByAllNegativeSignFractionDistinct()
+                        .collect(Collectors.toList())
+        );
+    }
+
+    @Test
+    void testFindDecimalFractionByUserName() {
+        assertEquals(
+                List.of(2.0d, -0.2d, 0.5d, (double) 4 / 3),
+                new Searches().findDecimalFractionByUserName("Ana")
                         .collect(Collectors.toList())
         );
     }
