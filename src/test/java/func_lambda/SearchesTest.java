@@ -160,4 +160,20 @@ public class SearchesTest {
                         .collect(Collectors.toList())
                 );
     }
+
+    @Test
+    void testFindFractionAdditionByUserId(){
+        assertEquals(
+                new Fraction(3,1),
+                new Searches().findFractionAdditionByUserId("1")
+        );
+    }
+
+    @Test
+    void testFindFirstFractionSubtractionByUserName(){
+        assertEquals(
+                new Fraction(1, 1),
+                new Searches().findFirstFractionSubtractionByUserName("1")
+        );
+    }
 }
