@@ -53,4 +53,12 @@ public class SearchesTest {
                         .collect(Collectors.toList())
         );
     }
+
+    @Test
+    void testFindFractionMultiplicationByUserFamilyName(){
+        assertEquals(
+                new Fraction(0, 1),
+                new Searches().findFractionMultiplicationByUserFamilyName("Fernandez")
+        );
+    }
 }
