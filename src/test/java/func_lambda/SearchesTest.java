@@ -17,4 +17,13 @@ public class SearchesTest {
                         .collect(Collectors.toList())
         );
     }
+
+    @Test
+    void testFindUserFamilyNameByFractionDenominator(){
+        assertEquals(
+                List.of("Blanco", "López"),
+                new Searches().findUserFamilyNameByFractionDenominator(5)
+                        .collect(Collectors.toList())
+        );
+    }
 }
