@@ -61,4 +61,20 @@ public class SearchesTest {
                 new Searches().findFractionMultiplicationByUserFamilyName("Blanco")
         );
     }
+
+    @Test
+    void testFindFirstFractionDivisionByUserId(){
+        assertEquals(
+                new Fraction(-6,15),
+                new Searches().findFirstFractionDivisionByUserId("3")
+        );
+    }
+
+    @Test
+    void testFirstDecimalFractionByUserName(){
+        assertEquals(
+                (double) -10,
+                new Searches().findFirstDecimalFractionByUserName("Ana")
+        );
+    }
 }
