@@ -77,4 +77,13 @@ public class SearchesTest {
                 new Searches().findFirstDecimalFractionByUserName("Ana")
         );
     }
+
+    @Test
+    void testFindUserIdByAllProperFraction(){
+        assertEquals(
+                List.of(),
+                new Searches().findUserIdByAllProperFraction()
+                        .collect(Collectors.toList())
+        );
+    }
 }
