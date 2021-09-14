@@ -151,4 +151,13 @@ public class SearchesTest {
                         .collect(Collectors.toList())
         );
     }
+
+    @Test
+    void testFindDecimalFractionByNegativeSignFraction() {
+        assertEquals(
+                List.of(-0.2, -0.5, -0.0),
+                new Searches().findDecimalFractionByNegativeSignFraction()
+                        .collect(Collectors.toList())
+                );
+    }
 }
