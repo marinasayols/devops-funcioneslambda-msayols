@@ -38,7 +38,7 @@ public class Searches {
                 .filter(user -> user.getFractions().stream()
                         .anyMatch(Fraction::isProper))
                 .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
-                .map(User::getFamilyName);
+                .map(User::familyNameInitial);
     }
 
     public Stream<String> findUserIdByAnyProperFraction() {
@@ -73,15 +73,19 @@ public class Searches {
     public Double findFirstDecimalFractionByUserName(String name) {
         return new UsersDatabase().findAll()
                 .filter(user -> name.equals(user.getName()))
+                .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
                 .flatMap(user -> user.getFractions().stream())
-                .findFirst().get().decimal();
+                .peek(x -> LogManager.getLogger(this.getClass()).info("fractions: " + x))
+                .map(Fraction::decimal)
+                .findFirst()
+                .orElse(Double.NaN);
     }
 
     public Stream<String> findUserIdByAllProperFraction() {
         return new UsersDatabase().findAll()
                 .filter(user -> user.getFractions().stream()
                         .allMatch(Fraction::isProper))
-                .map(User::getName);
+                .map(User::getId);
     }
 
     public Stream<Double> findDecimalImproperFractionByUserName(String name) {
@@ -111,7 +115,7 @@ public class Searches {
     public Fraction findHighestFraction() {
         return new UsersDatabase().findAll()
                 .flatMap(user -> user.getFractions().stream())
-                .max(Comparator.comparingDouble(Fraction::decimal))
+                .max(Fraction::compare)
                 .orElse(new Fraction());
     }
 
