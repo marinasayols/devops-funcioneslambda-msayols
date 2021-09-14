@@ -74,9 +74,11 @@ public class Searches {
         return new UsersDatabase().findAll()
                 .filter(user -> name.equals(user.getName()))
                 .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
-                .flatMap(user -> user.getFractions().stream()).limit(2)
+                .flatMap(user -> user.getFractions().stream())
                 .peek(x -> LogManager.getLogger(this.getClass()).info("fractions: " + x))
-                .reduce(Fraction::division).get().decimal();
+                .map(Fraction::decimal)
+                .findFirst()
+                .orElse(Double.NaN);
     }
 
     public Stream<String> findUserIdByAllProperFraction() {
