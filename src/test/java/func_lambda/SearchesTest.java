@@ -76,7 +76,7 @@ public class SearchesTest {
     @Test
     void testFirstDecimalFractionByUserName() {
         assertEquals(
-                (double) -10,
+                (double) 2,
                 new Searches().findFirstDecimalFractionByUserName("Ana")
         );
     }
@@ -101,7 +101,7 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindFirstProperFractionByUserId(){
+    void testFindFirstProperFractionByUserId() {
         assertEquals(
                 new Fraction(0, 1),
                 new Searches().findFirstProperFractionByUserId("1")
@@ -109,11 +109,12 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindUserFamilyNameByImproperFraction(){
+    void testFindUserFamilyNameByImproperFraction() {
         assertEquals(
                 List.of("Torres", "Torres"),
                 new Searches().findUserFamilyNameByImproperFraction()
                         .collect(Collectors.toList())
         );
     }
+
 }
