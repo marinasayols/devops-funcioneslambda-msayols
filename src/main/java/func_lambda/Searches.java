@@ -73,8 +73,10 @@ public class Searches {
     public Double findFirstDecimalFractionByUserName(String name) {
         return new UsersDatabase().findAll()
                 .filter(user -> name.equals(user.getName()))
-                .flatMap(user -> user.getFractions().stream())
-                .findFirst().get().decimal();
+                .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
+                .flatMap(user -> user.getFractions().stream()).limit(2)
+                .peek(x -> LogManager.getLogger(this.getClass()).info("fractions: " + x))
+                .reduce(Fraction::division).get().decimal();
     }
 
     public Stream<String> findUserIdByAllProperFraction() {
