@@ -1,9 +1,6 @@
 package func_lambda;
 
-import org.apache.commons.logging.Log;
 import org.apache.logging.log4j.LogManager;
-
-import java.util.Comparator;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
