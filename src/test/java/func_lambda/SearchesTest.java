@@ -167,17 +167,10 @@ public class SearchesTest {
     }
 
     @Test
-    void testFindFirstFractionSubtractionByUserName(){
+    void testFindFirstFractionSubtractionByUserName() {
         assertEquals(
                 new Fraction(1, 1),
                 new Searches().findFirstFractionSubtractionByUserName("1")
         );
-    }
-
-    @Test
-    void faultyTest(){
-        assertEquals("1", 0);
-
-
     }
 }
