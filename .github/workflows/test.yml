@@ -19,7 +19,7 @@ jobs:
         run: >
           mvn -B verify -DskipTests sonar:sonar
           -Dsonar.projectKey=marinasayols_devops-funcioneslambda-msayols
-          -Dsonar.organization=Marina Sayols
+          -Dsonar.organization=marinasayols
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=$SONAR_TOKEN
         env:
