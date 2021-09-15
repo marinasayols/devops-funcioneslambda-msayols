@@ -2,12 +2,9 @@ package func_lambda;
 
 import org.junit.jupiter.api.Test;
 
-import javax.naming.directory.SearchResult;
-import java.io.SequenceInputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.collectingAndThen;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SearchesTest {
