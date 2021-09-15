@@ -177,5 +177,7 @@ public class SearchesTest {
     @Test
     void faultyTest(){
         assertEquals("1", 0);
+
+
     }
 }
