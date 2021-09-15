@@ -88,14 +88,14 @@ public class Fraction {
 
     public Fraction division(Fraction f2) {
         return new Fraction(
-                (int) this.numerator * f2.getDenominator(),
-                (int) this.denominator * f2.getNumerator());
+                this.numerator * f2.getDenominator(),
+                this.denominator * f2.getNumerator());
     }
 
     public Fraction multiplication(Fraction f2) {
         return new Fraction(
-                (int) this.numerator * f2.getNumerator(),
-                (int) this.denominator * f2.getDenominator());
+                this.numerator * f2.getNumerator(),
+                this.denominator * f2.getDenominator());
     }
 
     public Fraction addition(Fraction f2) {

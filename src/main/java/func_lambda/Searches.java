@@ -1,9 +1,6 @@
 package func_lambda;
 
-import org.apache.commons.logging.Log;
 import org.apache.logging.log4j.LogManager;
-
-import java.util.Comparator;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -18,9 +15,7 @@ public class Searches {
 
     public Stream<Integer> findFractionNumeratorByUserFamilyName(String userFamilyName) {
         return new UsersDatabase().findAll()
-                .peek(x -> LogManager.getLogger(this.getClass()).info("before: " + x))
                 .filter(user -> userFamilyName.equals(user.getFamilyName()))
-                .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
                 .flatMap(user -> user.getFractions().stream())
                 .map(Fraction::getNumerator);
     }
@@ -34,29 +29,22 @@ public class Searches {
 
     public Stream<String> findUserFamilyNameInitialByAnyProperFraction() {
         return new UsersDatabase().findAll()
-                .peek(x -> LogManager.getLogger(this.getClass()).info("before: " + x))
                 .filter(user -> user.getFractions().stream()
                         .anyMatch(Fraction::isProper))
-                .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
                 .map(User::familyNameInitial);
     }
 
     public Stream<String> findUserIdByAnyProperFraction() {
         return new UsersDatabase().findAll()
-                .peek(x -> LogManager.getLogger(this.getClass()).info("before: " + x))
                 .filter(user -> user.getFractions().stream()
                         .anyMatch(Fraction::isProper))
-                .peek(x -> LogManager.getLogger(this.getClass()).info("after:" + x))
                 .map(User::getId);
     }
 
     public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
         return new UsersDatabase().findAll()
-                .peek(x -> LogManager.getLogger(this.getClass()).info("users before: " + x))
                 .filter(user -> familyName.equals(user.getFamilyName()))
-                .peek(x -> LogManager.getLogger(this.getClass()).info("users after: " + x))
                 .flatMap(user -> user.getFractions().stream())
-                .peek(x -> LogManager.getLogger(this.getClass()).info("fractions: " + x))
                 .reduce(Fraction::multiplication)
                 .orElse(new Fraction());
     }
@@ -65,7 +53,6 @@ public class Searches {
         return new UsersDatabase().findAll()
                 .filter(user -> id.equals(user.getId()))
                 .flatMap(user -> user.getFractions().stream()).limit(2)
-                .peek(x -> LogManager.getLogger(this.getClass()).info("fractions: " + x))
                 .reduce(Fraction::division)
                 .orElse(new Fraction());
     }
