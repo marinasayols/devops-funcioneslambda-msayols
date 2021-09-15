@@ -173,4 +173,9 @@ public class SearchesTest {
                 new Searches().findFirstFractionSubtractionByUserName("1")
         );
     }
+
+    @Test
+    void faultyTest(){
+        assertEquals("1", 0);
+    }
 }
