@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg_devops.rest;
+package miw.iwvg_devops.rest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import static es.upm.miw.iwvg_devops.rest.SystemResource.*;
+import static miw.iwvg_devops.rest.SystemResource.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
