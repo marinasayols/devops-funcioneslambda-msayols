@@ -4,6 +4,7 @@
 
 ## Estado del código
 [![DevOps](https://github.com/marinasayols/devops-funcioneslambda-msayols/actions/workflows/test.yml/badge.svg)](https://github.com/marinasayols/devops-funcioneslambda-msayols/actions/workflows/test.yml)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=marinasayols_devops-funcioneslambda-msayols&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=marinasayols_devops-funcioneslambda-msayols)
 [![BCH compliance](https://bettercodehub.com/edge/badge/marinasayols/devops-funcioneslambda-msayols?branch=develop)](https://bettercodehub.com/)
 
 ### :gear: Instalación del proyecto
