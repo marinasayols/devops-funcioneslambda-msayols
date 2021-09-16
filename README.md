@@ -2,6 +2,8 @@
 ## Ingeniería Web: Visión General (IWVG) DevOps
 > Este proyecto es una Plantilla de apoyo docente de la asignatura.maps.google.com/
 
+## Estado del código
+[![DevOps](https://github.com/marinasayols/devops-funcioneslambda-msayols/actions/workflows/test.yml/badge.svg)](https://github.com/marinasayols/devops-funcioneslambda-msayols/actions/workflows/test.yml)
 [![BCH compliance](https://bettercodehub.com/edge/badge/marinasayols/devops-funcioneslambda-msayols?branch=develop)](https://bettercodehub.com/)
 
 ### :gear: Instalación del proyecto
