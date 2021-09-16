@@ -13,8 +13,8 @@
     </parent>
 
     <artifactId>devops-funcioneslambda-msayols</artifactId>
-    <groupId>es.upm.miw</groupId>
-    <version>1.2.0-RELEASE</version>
+    <groupId>marinasayols</groupId>
+    <version>1.3.0-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}.${project.artifactId}</name>
